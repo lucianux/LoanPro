@@ -18,19 +18,19 @@ public sealed class LoanUseCase : ILoanUseCase
 
         var result = LoanCalculator.Calculate(parameters, request.GenerateSchedule);
 
-        return new LoanSummaryDto(
-            MonthlyPayment: result.MonthlyPayment,
-            TotalPaid: result.TotalPaid,
-            TotalInterest: result.TotalInterest,
-            Schedule: result.Schedule?.Select(i =>
-                new LoanInstallmentDto(
-                    Number: i.Number,
-                    Payment: i.Payment,
-                    InterestPortion: i.InterestPortion,
-                    PrincipalPortion: i.PrincipalPortion,
-                    RemainingPrincipal: i.RemainingPrincipal
-                )
-            ).ToList()
-        );
+        return new LoanSummaryDto
+        {
+            MonthlyPayment = result.MonthlyPayment,
+            TotalPaid = result.TotalPaid,
+            TotalInterest = result.TotalInterest,
+            Schedule = result.Schedule?.Select(i => new LoanInstallmentDto
+            {
+                Number = i.Number,
+                Payment = i.Payment,
+                InterestPortion = i.InterestPortion,
+                PrincipalPortion = i.PrincipalPortion,
+                RemainingPrincipal = i.RemainingPrincipal
+            }).ToList()
+        };
     }
 }
