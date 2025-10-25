@@ -20,8 +20,8 @@ public static class LoanCalculator
     /// <returns>LoanResult with payment info and optional schedule.</returns>
     public static LoanResult Calculate(LoanParameters p, bool generateSchedule)
     {
-        decimal totalInterest = 0m;
-        decimal totalPaid = 0m;
+        decimal totalInterest;
+        decimal totalPaid;
 
         // Step 1: Validate input parameters according to domain rules.
         Validate(p);
