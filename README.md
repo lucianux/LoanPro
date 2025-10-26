@@ -59,7 +59,7 @@ dotnet run --project src/LoanPro.Api
 
 By default, the API runs on `http://localhost:5000`.
 
-Swagger: open your browser and navigate to: http://localhost:5000/swagger
+Swagger: `http://localhost:5000/swagger`.
 
 ---
 
