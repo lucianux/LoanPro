@@ -16,10 +16,31 @@
       },
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://localhost:5000"
+        "ASPNETCORE_URLS": "http://localhost:5000",
+        "ASPNETCORE_DETAILEDERRORS": "true"
       },
       "console": "integratedTerminal",
       "justMyCode": true
+    },
+    {
+    "name": "LoanPro.Api (Watch)",
+    "type": "coreclr",
+    "request": "launch",
+    "preLaunchTask": "build",
+    "program": "dotnet",
+    "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/src/LoanPro.Api/LoanPro.Api.csproj"
+    ],
+    "cwd": "${workspaceFolder}",
+    "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5000"
+    },
+    "console": "integratedTerminal",
+    "justMyCode": true
     }
   ],
   "compounds": [
