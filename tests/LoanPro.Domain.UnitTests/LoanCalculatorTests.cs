@@ -4,9 +4,36 @@ using LoanPro.Domain.Services;
 
 namespace LoanPro.Domain.UnitTests;
 
-public class LoanCalculatorTests
+public class LoanCalculatorTests : IDisposable
 {
-    // AAA: Arrange – Act – Assert
+    // ===============================================================
+    // SETUP SECTION
+    // This constructor runs before *each* test.
+    // Use it to initialize shared objects, services, or mock dependencies.
+    // ===============================================================
+    public LoanCalculatorTests()
+    {
+        // Example:
+        // _logger = new Mock<ILogger>();
+        // _service = new LoanCalculator(_logger.Object);
+    }
+
+    // ===============================================================
+    // TEARDOWN SECTION
+    // This method runs after *each* test.
+    // Use it to release resources, close connections, or dispose mocks.
+    // ===============================================================
+    public void Dispose()
+    {
+        // Example:
+        // _service.Dispose();
+        // _logger = null;
+    }
+
+    // ===============================================================
+    // TESTS
+    // They use AAA pattern: Arrange – Act – Assert
+    // ===============================================================
 
     [Fact]
     public void Calculate_ZeroRate_ReturnsLinearPaymentsAndZeroInterest()

@@ -4,9 +4,36 @@ using LoanPro.Application.Services;
 
 namespace LoanPro.Application.UnitTests;
 
-public class LoanUseCaseTests
+public class LoanUseCaseTests : IDisposable
 {
     private readonly ILoanUseCase _useCase = new LoanUseCase();
+
+    // ===============================================================
+    // SETUP SECTION
+    // This constructor runs before *each* test.
+    // Use it to prepare shared instances or test data.
+    // ===============================================================
+    public LoanUseCaseTests()
+    {
+        // Example setup: instantiate the service under test
+        _useCase = new LoanUseCase();
+    }
+
+    // ===============================================================
+    // TEARDOWN SECTION
+    // This method runs after *each* test.
+    // Use it to clean up or dispose shared resources.
+    // ===============================================================
+    public void Dispose()
+    {
+        // Example teardown: clean memory or release dependencies
+        // _useCase = null; // not necessary here, but shown for reference
+    }
+
+    // ===============================================================
+    // TESTS
+    // They use AAA pattern: Arrange – Act – Assert
+    // ===============================================================
 
     [Fact]
     public void Calculate_MapsDomainResultIntoDto_CreatesScheduleWhenRequested()
